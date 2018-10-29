@@ -27,18 +27,31 @@ class NewVisitorTest(unittest.TestCase):
         self.assertEqual(inputbox.get_attribute("placeholder"), "Enter a to-do item")
 
         # User inputs to-do "By some stuff"
+        inputbox.send_keys("Buy some stuff")
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
 
+        # Add a second item "Buy some other stuff"
+        inputbox = self.browser.find_element_by_id("id_new_item")
+        self.assertEqual(inputbox.get_attribute("placeholder"), "Enter a to-do item")
+
+        inputbox.send_keys("Buy some other stuff")
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
+
+        # Check if items are displayed on the page
         table = self.browser.find_element_by_id("id_list_table")
         rows = table.find_elements_by_tag_name("tr")
-        self.assertTrue(
-            any(row.text == "1: Buy some stuff" for row in rows),
-            "New to-do item did not appear in the table.",
+        self.assertIn(
+            "1. Buy some stuff",
+            [row.text for row in rows],
+            f"First to-do item did not appear in the table. Contents were: \n{table.text}",
         )
-
-        # User adds another item "But some other stuff"
-        self.fail("Finnish the test!")
+        self.assertIn(
+            "2. Buy some other stuff",
+            [row.text for row in rows],
+            f"2nd to-do item did not appear in the table. Contents were: \n{table.text}",
+        )
 
 
 if __name__ == "__main__":
