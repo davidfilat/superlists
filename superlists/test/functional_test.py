@@ -6,6 +6,11 @@ from selenium.webdriver.common.keys import Keys
 
 
 class NewVisitorTest(unittest.TestCase):
+    def check_for_row_in_list_table(self, row_text):
+        table = self.browser.find_element_by_id("id_list_table")
+        rows = table.find_elements_by_tag_name("tr")
+        self.assertIn(row_text, [row.text for row in rows])
+
     def setUp(self):
         self.browser = webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
 
@@ -40,18 +45,8 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)
 
         # Check if items are displayed on the page
-        table = self.browser.find_element_by_id("id_list_table")
-        rows = table.find_elements_by_tag_name("tr")
-        self.assertIn(
-            "1. Buy some stuff",
-            [row.text for row in rows],
-            f"First to-do item did not appear in the table. Contents were: \n{table.text}",
-        )
-        self.assertIn(
-            "2. Buy some other stuff",
-            [row.text for row in rows],
-            f"2nd to-do item did not appear in the table. Contents were: \n{table.text}",
-        )
+        self.check_for_row_in_list_table("1. Buy some stuff")
+        self.check_for_row_in_list_table("2. Buy some other stuff")
 
 
 if __name__ == "__main__":
