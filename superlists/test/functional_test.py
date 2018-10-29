@@ -27,15 +27,15 @@ class NewVisitorTest(unittest.TestCase):
         self.assertEqual(inputbox.get_attribute("placeholder"), "Enter a to-do item")
 
         # User inputs to-do "By some stuff"
-        input.send_keys("Buy some stuff")
-
-        # When user presses Enter the item is added to the to-do list
-        input.send_keys(Keys.ENTER)
+        inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
 
         table = self.browser.find_element_by_id("id_list_table")
         rows = table.find_elements_by_tag_name("tr")
-        self.assertTrue(any(row.text == "1: Buy some stuff" for row in rows))
+        self.assertTrue(
+            any(row.text == "1: Buy some stuff" for row in rows),
+            "New to-do item did not appear in the table.",
+        )
 
         # User adds another item "But some other stuff"
         self.fail("Finnish the test!")
