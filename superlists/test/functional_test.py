@@ -36,6 +36,9 @@ class NewVisitorTest(unittest.TestCase):
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
 
+        # Check if items are displayed on the page
+        self.check_for_row_in_list_table("1. Buy some stuff")
+
         # Add a second item "Buy some other stuff"
         inputbox = self.browser.find_element_by_id("id_new_item")
         self.assertEqual(inputbox.get_attribute("placeholder"), "Enter a to-do item")
@@ -43,9 +46,6 @@ class NewVisitorTest(unittest.TestCase):
         inputbox.send_keys("Buy some other stuff")
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
-
-        # Check if items are displayed on the page
-        self.check_for_row_in_list_table("1. Buy some stuff")
         self.check_for_row_in_list_table("2. Buy some other stuff")
 
 

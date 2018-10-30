@@ -1,0 +1,12 @@
+
+TODO:
+  New:
+    ☐ lists.views: Display more than one list
+    ☐ lists.views: Display multiple items in the list
+  Done:
+
+FIXME:
+  New:
+    ☐ lists.views: Don't save item if it already exists
+  Done:
+    ✔ lists.views: Don't save empty items for every get request @done(18-10-30 21:45)
