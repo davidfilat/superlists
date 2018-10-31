@@ -5,15 +5,19 @@
         "-s",
         ".",
         "-p",
-        "*test*.py"
+        "*test*.py",
+        "*_test.py",
+        "test_*.py",
+        "tests.py",
+        "test.py"
     ],
-    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.pyTestEnabled": true,
     "python.unitTest.nosetestsEnabled": false,
-    "python.unitTest.unittestEnabled": true,
+    "python.unitTest.unittestEnabled": false,
     "[python]": {
         "editor.formatOnPaste": false,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
-
     }
+}
