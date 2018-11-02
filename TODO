@@ -1,12 +1,10 @@
 
 TODO:
-  New:
-    ☐ lists.views: Display more than one list
-    ☐ lists.views: Display multiple items in the list
-  Done:
+  ☐ lists.views: Display more than one list
+  ✔ lists.views: Display multiple items in the list @done(18-11-01 00:28)
+  ✔ Clean up after FT runs @done(18-11-01 00:29)
+  ✔ Romeve time.sleeps @done(18-11-01 00:29)
 
 FIXME:
-  New:
-    ☐ lists.views: Don't save item if it already exists
-  Done:
-    ✔ lists.views: Don't save empty items for every get request @done(18-10-30 21:45)
+☐ lists.views: Don't save item if it already exists
+✔ lists.views: Don't save empty items for every get request @done(18-10-30 21:45)
