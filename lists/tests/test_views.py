@@ -1,5 +1,3 @@
-import unittest
-
 from django.contrib import contenttypes
 from django.http import HttpRequest
 from django.test import TestCase
@@ -31,13 +29,18 @@ class HomePageTest(TestCase):
         response = self.client.post("/", {"item_text": "A new list item"})
 
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response["location"], "/")
+        self.assertEqual(response["location"], "/lists/the-only-list-in-the-world/")
 
-    def test_display_all_list_items(self):
+
+class ListViewTest(TestCase):
+    def test_uses_list_template(self):
+        response = self.client.get("/lists/the-only-list-in-the-world/")
+        self.assertTemplateUsed(response, "list.html")
+
+    def test_display_all_items(self):
         Item.objects.create(text="itemey 1")
         Item.objects.create(text="itemey 2")
+        response = self.client.get("/lists/the-only-list-in-the-world/")
 
-        response = self.client.get("/")
-
-        self.assertIn("itemey 1", response.content.decode())
-        self.assertIn("itemey 2", response.content.decode())
+        self.assertContains(response, "itemey 1")
+        self.assertContains(response, "itemey 2")

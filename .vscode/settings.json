@@ -19,5 +19,13 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
-    }
+    },
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "files.autoSave": "onFocusChange",
+    "python.unitTest.pyTestArgs": [
+        "--rootdir=${workspaceFolder}"
+    ],
+    "pythonTestExplorer.testFramework": "pytest",
 }
