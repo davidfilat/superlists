@@ -1,16 +1,5 @@
 {
     "python.pythonPath": "/Users/davidfilat/.virtualenvs/testing_django/bin/python",
-    "python.unitTest.unittestArgs": [
-        "-v",
-        "-s",
-        ".",
-        "-p",
-        "*test*.py",
-        "*_test.py",
-        "test_*.py",
-        "tests.py",
-        "test.py"
-    ],
     "python.unitTest.pyTestEnabled": true,
     "python.unitTest.nosetestsEnabled": false,
     "python.unitTest.unittestEnabled": false,
@@ -24,8 +13,5 @@
         "django-html": "html"
     },
     "files.autoSave": "onFocusChange",
-    "python.unitTest.pyTestArgs": [
-        "--rootdir=${workspaceFolder}"
-    ],
     "pythonTestExplorer.testFramework": "pytest",
 }

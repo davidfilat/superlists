@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80079c8a-2ff4-41c9-a593-5efb636a0452" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/tests/test_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lists/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/lists/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/superlists/test/functional_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/superlists/test/functional_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/superlists$Test__lists_tests_test_models_ItemModelTest.coverage" NAME="Test: lists.tests.test_models.ItemModelTest Coverage Results" MODIFIED="1541288336340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/superlists$Test__lists_tests_test_views_HomePageTest_test_can_save_a_POST_request.coverage" NAME="Test: lists.tests.test_views.HomePageTest.test_can_save_a_POST_request Coverage Results" MODIFIED="1540934338715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/superlists$Test__lists_tests_test_views_HomePageTest_test_home_page_returns_correct_html.coverage" NAME="Test: lists.tests.test_views.HomePageTest.test_home_page_returns_correct_html Coverage Results" MODIFIED="1540934260255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
@@ -24,21 +22,22 @@
     <session id="-1931766385">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
     </session>
@@ -51,9 +50,18 @@
             <state>
               <first_editor relative-caret-position="264">
                 <caret line="18" selection-start-line="18" selection-end-line="18" />
-                <folding>
-                  <element signature="e#0#15#0" expanded="true" />
-                </folding>
+              </first_editor>
+              <second_editor relative-caret-position="-168" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/django_test_runner.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="3295">
+                <caret line="164" selection-start-line="164" selection-end-line="164" />
               </first_editor>
               <second_editor relative-caret-position="-168" />
             </state>
@@ -61,13 +69,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/django_test_runner.py">
+        <entry file="file://$PROJECT_DIR$/lists/tests/test_models.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="667">
-                <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+              <first_editor relative-caret-position="144">
+                <caret line="6" selection-start-line="5" selection-end-line="6" />
+                <folding>
+                  <element signature="e#0#32#0" expanded="true" />
+                </folding>
               </first_editor>
-              <second_editor relative-caret-position="-168" />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -93,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,6 +132,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,7 +161,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django tests.Test: lists.tests.test_views.HomePageTest.test_can_save_a_POST_request">
+  <component name="RunManager" selected="Django tests.Test: lists.tests.test_models.ItemModelTest">
+    <configuration name="Test: lists.tests.test_models.ItemModelTest" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
+      <module name="superlists" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="lists.tests.test_models.ItemModelTest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: lists.tests.test_views.HomePageTest.test_can_save_a_POST_request" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
       <module name="superlists" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -218,9 +249,11 @@
       <item itemvalue="Django server.superlists" />
       <item itemvalue="Django tests.Test: lists.tests.test_views.HomePageTest.test_home_page_returns_correct_html" />
       <item itemvalue="Django tests.Test: lists.tests.test_views.HomePageTest.test_can_save_a_POST_request" />
+      <item itemvalue="Django tests.Test: lists.tests.test_models.ItemModelTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: lists.tests.test_models.ItemModelTest" />
         <item itemvalue="Django tests.Test: lists.tests.test_views.HomePageTest.test_can_save_a_POST_request" />
         <item itemvalue="Django tests.Test: lists.tests.test_views.HomePageTest.test_home_page_returns_correct_html" />
       </list>
@@ -249,11 +282,14 @@
     <history-entry file="Test__lists_tests_test_views_HomePageTest_test_can_save_a_POST_request - 2018.10.30 at 23h 19m 09s.xml">
       <configuration name="Test: lists.tests.test_views.HomePageTest.test_can_save_a_POST_request" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
+    <history-entry file="Test__lists_tests_test_models_ItemModelTest - 2018.11.04 at 01h 38m 57s.xml">
+      <configuration name="Test: lists.tests.test_models.ItemModelTest" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -307,9 +343,6 @@
         <state>
           <first_editor relative-caret-position="264">
             <caret line="18" selection-start-line="18" selection-end-line="18" />
-            <folding>
-              <element signature="e#0#15#0" expanded="true" />
-            </folding>
           </first_editor>
           <second_editor relative-caret-position="-168" />
         </state>
@@ -318,10 +351,23 @@
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/django_test_runner.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="667">
-            <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+          <first_editor relative-caret-position="3295">
+            <caret line="164" selection-start-line="164" selection-end-line="164" />
           </first_editor>
           <second_editor relative-caret-position="-168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lists/tests/test_models.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="144">
+            <caret line="6" selection-start-line="5" selection-end-line="6" />
+            <folding>
+              <element signature="e#0#32#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
