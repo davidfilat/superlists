@@ -2,10 +2,10 @@
 TODO:
 
   Views:
-    ☐ lists.views: Display more than one list
+    ✔ lists.views: Display more than one list @done(18-11-06 22:37)
     ✔ lists.views: Display multiple items in the list @done(18-11-01 00:28)
-    ☐ Add unique URLs for each list @started(18-11-06 11:20)
-    ☐ Add a URL for creating a new list via POST
+    ✔ Add unique URLs for each list @started(18-11-06 11:20) @done(18-11-06 22:37) @lasted(11h17m28s)
+    ✔ Add a URL for creating a new list via POST @done(18-11-06 22:37)
     ✔ Add URLS for adding new item to an existing list via POST @done(18-11-05 21:49)
 
   Tests:
