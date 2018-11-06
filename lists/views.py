@@ -2,20 +2,33 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_http_methods
 
-from lists.models import Item
+from lists.models import Item, List
 
 
 # Create your views here.
 @require_http_methods(["GET", "POST"])
 def home_page(request):
     if request.method == "POST":
-        new_item_text = request.POST["item_text"]
-        Item.objects.create(text=new_item_text)
-        return redirect("/lists/the-only-list-in-the-world/")
+        list_ = List.objects.create()
+        Item.objects.create(text=request.POST["item_text"], list=list_)
+        return redirect(f"/lists/{list_.id}/")
 
     return render(request, "home.html")
 
 
-def view_list(request):
-    items = Item.objects.all()
-    return render(request, "list.html", {"items": items})
+@require_http_methods(["GET", "POST"])
+def view_list(request, list_id):
+    if request.method == "POST":
+        list_ = List.objects.get(id=list_id)
+        Item.objects.create(text=request.POST["item_text"], list=list_)
+    else:
+        list_ = List.objects.get(id=list_id)
+    items = Item.objects.filter(list=list_)
+    return render(request, "list.html", {"items": items, "list_id": list_id})
+
+
+@require_http_methods(["POST"])
+def new_list(request):
+    list_ = List.objects.create()
+    Item.objects.create(text=request.POST["item_text"], list=list_)
+    return redirect(f"/lists/{list_.id}")

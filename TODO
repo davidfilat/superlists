@@ -4,16 +4,17 @@ TODO:
   Views:
     ☐ lists.views: Display more than one list
     ✔ lists.views: Display multiple items in the list @done(18-11-01 00:28)
-    ☐ Add unique URLs for each list
+    ☐ Add unique URLs for each list @started(18-11-06 11:20)
     ☐ Add a URL for creating a new list via POST
-    ☐ Add URLS for adding new item to an existing list via POST
+    ✔ Add URLS for adding new item to an existing list via POST @done(18-11-05 21:49)
 
   Tests:
     ✔ Clean up after FT runs @done(18-11-01 00:29)
     ✔ Romeve time.sleeps @done(18-11-01 00:29)
+    ✔ TestClass for new list creation @started(18-11-05 16:22) @done(18-11-05 21:49) @lasted(5h27m28s)
 
-    Models:
-    ☐ Adjust model so that the items are associated with different lists.
+  Models:
+    ✔ Adjust model so that the items are associated with different lists. @done(18-11-06 11:20)
 
 FIXME:
 ☐ lists.views: Don't save item if it already exists
