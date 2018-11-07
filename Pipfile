@@ -8,7 +8,7 @@ appdirs = "*"
 astroid = "*"
 atomicwrites = "*"
 attrs = "*"
-django = "*"
+Django = "*"
 lazy-object-proxy = "*"
 mccabe = "*"
 more-itertools = "*"
@@ -45,6 +45,7 @@ toml = "*"
 v = {version = "*", editable = true}
 wrapt = "*"
 prospector = "*"
+
 
 [requires]
 python_version = "3.7.1"

@@ -29,6 +29,24 @@ class NewVisitorTest(LiveServerTestCase):
                     raise e
                 time.sleep(0.5)
 
+    def test_layout_and_styling(self):
+        self.browser.get(self.live_server_url)
+        self.browser.set_window_size(1024, 768)
+        inputbox = self.browser.find_element_by_id("id_new_item")
+
+        def assert_inputbox_centered(browser):
+            inputbox = browser.find_element_by_id("id_new_item")
+            self.assertAlmostEqual(
+                inputbox.location["x"] + inputbox.size["width"] / 2, 512, delta=10
+            )
+
+        assert_inputbox_centered(self.browser)
+
+        inputbox.send_keys("testing")
+        inputbox.send_keys(Keys.ENTER)
+        self.wait_for_row_in_list_table("1. testing")
+        assert_inputbox_centered(self.browser)
+
     def test_can_start_a_list_for_one_user(self):
         # Edith has heard about a cool new online to-do app. She goes
         # to check out its homepage
@@ -41,8 +59,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         # She is invited to enter a to-do item straight away
         inputbox = self.browser.find_element_by_id("id_new_item")
-        self.assertEqual(
-            inputbox.get_attribute("placeholder"), "Enter a to-do item")
+        self.assertEqual(inputbox.get_attribute("placeholder"), "Enter a to-do item")
 
         # She types "Buy peacock feathers" into a text box (Edith's hobby
         # is tying fly-fishing lures)
@@ -61,8 +78,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox.send_keys(Keys.ENTER)
 
         # The page updates again, and now shows both items on her list
-        self.wait_for_row_in_list_table(
-            "2. Use peacock feathers to make a fly")
+        self.wait_for_row_in_list_table("2. Use peacock feathers to make a fly")
         self.wait_for_row_in_list_table("1. Buy peacock feathers")
 
         # Satisfied, she goes back to sleep

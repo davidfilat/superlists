@@ -24,9 +24,16 @@
         "--load-plugins pylint_django",
         "--load-plugins pylint_django.checkers.db_performance"
     ],
-    "spellright.language": [],
+    "spellright.language": [
+        "en"
+    ],
     "spellright.documentTypes": [
         "markdown",
-        "latex"
+        "latex",
+        "html"
     ],
+    "eslint.enable": false,
+    "html.format.wrapLineLength": 90,
+    "vetur.format.defaultFormatter.html": "prettyhtml",
+    "html.validate.styles": true,
 }

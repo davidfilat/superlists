@@ -96,7 +96,8 @@ class NewListTest(TestCase):
 
     def test_redirects_after_POST(self):
         response = self.client.post(
-            "/lists/new/", data={"item_text": "A new list item"})
+            "/lists/new/", data={"item_text": "A new list item"}
+        )
         new_list = List.objects.first()
         self.assertEqual(response["location"], f"/lists/{new_list.id}")
 
