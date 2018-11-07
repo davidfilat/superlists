@@ -14,4 +14,19 @@
     },
     "files.autoSave": "onFocusChange",
     "pythonTestExplorer.testFramework": "pytest",
+    "python.formatting.provider": "black",
+    "python.linting.pylamaEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "pydocs.style": "google",
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins pylint_django",
+        "--load-plugins pylint_django.checkers.db_performance"
+    ],
+    "spellright.language": [],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex"
+    ],
 }
