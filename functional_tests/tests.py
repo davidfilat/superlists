@@ -41,7 +41,8 @@ class NewVisitorTest(LiveServerTestCase):
 
         # She is invited to enter a to-do item straight away
         inputbox = self.browser.find_element_by_id("id_new_item")
-        self.assertEqual(inputbox.get_attribute("placeholder"), "Enter a to-do item")
+        self.assertEqual(
+            inputbox.get_attribute("placeholder"), "Enter a to-do item")
 
         # She types "Buy peacock feathers" into a text box (Edith's hobby
         # is tying fly-fishing lures)
@@ -60,7 +61,8 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox.send_keys(Keys.ENTER)
 
         # The page updates again, and now shows both items on her list
-        self.wait_for_row_in_list_table("2. Use peacock feathers to make a fly")
+        self.wait_for_row_in_list_table(
+            "2. Use peacock feathers to make a fly")
         self.wait_for_row_in_list_table("1. Buy peacock feathers")
 
         # Satisfied, she goes back to sleep
@@ -79,10 +81,10 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Now a new user, Francis, comes along to the site.
 
-        ## We use a new browser session to make sure that no information
-        ## of Edith's is coming through from cookies etc
+        # We use a new browser session to make sure that no information
+        # of Edith's is coming through from cookies etc
         self.browser.quit()
-        self.browser = webdriver.Firefox()
+        self.browser = webdriver.Firefox(executable_path=GECKODRIVER)
 
         # Francis visits the home page.  There is no sign of Edith's
         # list
