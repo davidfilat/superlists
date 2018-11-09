@@ -13,6 +13,7 @@ lazy-object-proxy = "*"
 mccabe = "*"
 more-itertools = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 "pep8" = "*"
