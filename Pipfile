@@ -12,9 +12,9 @@ Django = "*"
 lazy-object-proxy = "*"
 mccabe = "*"
 more-itertools = "*"
+gunicorn = "*"
 
 [dev-packages]
-"flake8" = "*"
 "pep8" = "*"
 "urllib3" = "*"
 blessings = "*"
@@ -32,20 +32,17 @@ pygments = "*"
 pylama = "*"
 pylint = "*"
 pylint-django = "*"
-pyls-black = "*"
-pyls-isort = "*"
 pytest = "*"
 pytest-django = "*"
-python-language-server = {extras = ["all"], version = "*"}
 pytz = "*"
 selenium = "*"
 six = "*"
 snowballstemmer = "*"
 toml = "*"
-v = {version = "*", editable = true}
 wrapt = "*"
 prospector = "*"
-
+python-language-server = "*"
+pyls-isort = "*"
 
 [requires]
 python_version = "3.7.1"

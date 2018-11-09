@@ -25,7 +25,7 @@ SECRET_KEY = "p9bhkhj=fsj2f=f=#ftdu$ti4*dq^$k0lsz2$2%7y5dr^m0bjk"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["superlists-david.herokuapp.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -115,3 +116,10 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 TEST_RUNNER = "runner.PytestTestRunner"
+PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+
+# Extra lookup directories for collectstatic to find static files
+STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, "static"),)
+
+#  Add configuration for static files storage using whitenoise
+STATICFILES_STORAGE = "whitenoise.django.GzipManifestStaticFilesStorage"
