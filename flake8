@@ -1,6 +1,0 @@
-[flake8]
-exclude = .git, __pycache__, frontend, .vscode, .idea, .gitignore
-max-line-length = 80
-select = C,E,F,W,B,B950
-ignore = E501
-max-complexity = 18

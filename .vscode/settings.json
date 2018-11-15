@@ -36,4 +36,7 @@
     "html.format.wrapLineLength": 90,
     "vetur.format.defaultFormatter.html": "prettyhtml",
     "html.validate.styles": true,
+    "files.associations": {
+        "*.html": "django-html"
+    },
 }
