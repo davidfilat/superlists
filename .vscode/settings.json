@@ -37,6 +37,6 @@
     "vetur.format.defaultFormatter.html": "prettyhtml",
     "html.validate.styles": true,
     "files.associations": {
-        "*.html": "django-html"
+        "*.html": "jinja-html"
     },
 }

@@ -11,18 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 import os
 
-from django.core.exceptions import ImproperlyConfigured
-
 import dj_database_url
-
-
-def get_env_variable(var_name):
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = "Set the {} environment variable".format(var_name)
-        raise ImproperlyConfigured(error_msg)
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if "DJANGO_DEBUG_FALSE" in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
-    ALLOWED_HOSTS = [os.environ["SITENAME"]]
+    ALLOWED_HOSTS = [os.environ["SITENAME"], "127.0.0.1"]
 else:
     DEBUG = True
     SECRET_KEY = "p9bhkhj=fsj2f=f=#ftdu$ti4*dq^$k0lsz2$2%7y5dr^m0bjk"
@@ -69,6 +58,12 @@ ROOT_URLCONF = "superlists.urls"
 
 TEMPLATES = [
     {
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {"environment": "superlists.jinja2.environment"},
+    },
+    {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [],
         "APP_DIRS": True,
@@ -80,7 +75,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
             ]
         },
-    }
+    },
 ]
 
 WSGI_APPLICATION = "superlists.wsgi.application"
@@ -109,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Chisinau"
 
 USE_I18N = True
 
