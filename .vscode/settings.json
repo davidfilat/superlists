@@ -15,7 +15,7 @@
     "files.autoSave": "onFocusChange",
     "pythonTestExplorer.testFramework": "pytest",
     "python.formatting.provider": "black",
-    "python.linting.pylamaEnabled": false,
+    "python.linting.pylamaEnabled": true,
     "python.linting.pylintEnabled": true,
     "pydocs.style": "google",
     "python.linting.pydocstyleEnabled": false,
@@ -39,4 +39,5 @@
     "files.associations": {
         "*.html": "jinja-html"
     },
+    "python.linting.pylamaPath": "/anaconda3/bin/pylama",
 }
