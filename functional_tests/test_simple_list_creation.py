@@ -1,10 +1,4 @@
-import os
-import time
-
-import pytest
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
 
 from .base import GECKODRIVER, FunctionalTest

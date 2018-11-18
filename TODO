@@ -2,6 +2,7 @@
 TODO:
 
   Views:
+    ☐ Remove hardcoded URLs from views.py
     ✔ lists.views: Display more than one list @done(18-11-06 22:37)
     ✔ lists.views: Display multiple items in the list @done(18-11-01 00:28)
     ✔ Add unique URLs for each list @started(18-11-06 11:20) @done(18-11-06 22:37) @lasted(11h17m28s)
