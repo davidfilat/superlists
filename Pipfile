@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 "jinja2" = "*"
 "psycopg2-binary" = "*"
-"psycopg2" = "*"
 dj-database-url = "*"
 Django = "*"
 gunicorn = "*"

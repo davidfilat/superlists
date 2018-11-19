@@ -11,12 +11,16 @@ Your To-Do list
 
 
 {% block table %}
-<table id="id_list_table" class="table">
 
-    {% for item in list.item_set.all %}
-    <tr>
-        <td>{{forloop.counter}}. {{item.text}}</td>
-    </tr>
-    {% endfor %}
-
-</table> {% endblock table %}
+{% if list.item_set.all.count > 0  %}
+    <table id="id_list_table" class="table">
+        {% for item in list.item_set.all %}
+            <tr>
+                <td>{{forloop.counter}}. {{item.text}}</td>
+            </tr>
+        {% endfor %}
+        {% else %}
+            <div class="alert alert-warning">There are no items in this list.</div>
+        {% endif %}
+    </table>
+{% endblock table %}
