@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-from .base import GECKODRIVER, FunctionalTest
+from .base import FunctionalTest
 
 
 class NewVisitorTest(FunctionalTest):
@@ -58,7 +58,7 @@ class NewVisitorTest(FunctionalTest):
         # We use a new browser session to make sure that no information
         # of Edith's is coming through from cookies etc
         self.browser.quit()
-        self.browser = webdriver.Firefox(executable_path=GECKODRIVER)
+        self.browser = self.set_browser()
 
         # Francis visits the home page.  There is no sign of Edith's
         # list
