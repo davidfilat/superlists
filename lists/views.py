@@ -18,18 +18,19 @@ def home_page(request):
 
 @require_http_methods(["GET", "POST"])
 def view_list(request, list_id):
+    list_ = List.objects.get(id=list_id)
+    error = None
+
     if request.method == "POST":
-        list_ = List.objects.get(id=list_id)
-        item = Item.objects.create(text=request.POST["item_text"], list=list_)
         try:
+            item = Item(text=request.POST["item_text"], list=list_)
             item.full_clean()
+            item.save()
+            return redirect(list_)
         except ValidationError:
             error = "You can't have an empty list item."
-            item.delete()
-            return render(request, "list.html", {"list": list_, "error": error})
-    else:
-        list_ = List.objects.get(id=list_id)
-    return render(request, "list.html", {"list": list_})
+
+    return render(request, "list.html", {"list": list_, "error": error})
 
 
 @require_http_methods(["POST"])
@@ -43,4 +44,4 @@ def new_list(request):
         item.delete()
         error = "You can't have an empty list item."
         return render(request, "home.html", {"error": error})
-    return redirect(f"/lists/{list_.id}")
+    return redirect(list_)
