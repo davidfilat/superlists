@@ -8,26 +8,35 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Item',
+            name="Item",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.TextField(default='')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("text", models.TextField(default="")),
             ],
         ),
         migrations.CreateModel(
-            name='List',
-            fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-            ],
+            name="List",
+            fields=[("id", models.AutoField(primary_key=True, serialize=False))],
         ),
         migrations.AddField(
-            model_name='item',
-            name='list',
-            field=models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to='lists.List'),
+            model_name="item",
+            name="list",
+            field=models.ForeignKey(
+                default=None,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="lists.List",
+            ),
         ),
     ]

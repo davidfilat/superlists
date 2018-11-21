@@ -31,5 +31,4 @@
     "files.associations": {
         "*.html": "django-html"
     },
-    "python.linting.pylamaPath": "/anaconda3/bin/pylama",
 }

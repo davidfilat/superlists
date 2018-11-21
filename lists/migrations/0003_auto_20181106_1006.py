@@ -5,14 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('lists', '0002_auto_20181106_0828'),
-    ]
+    dependencies = [("lists", "0002_auto_20181106_0828")]
 
     operations = [
         migrations.AlterField(
-            model_name='list',
-            name='id',
+            model_name="list",
+            name="id",
             field=models.AutoField(primary_key=True, serialize=False),
-        ),
+        )
     ]

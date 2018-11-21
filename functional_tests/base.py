@@ -10,22 +10,26 @@ MAX_WAIT = 10
 
 class FunctionalTest(StaticLiveServerTestCase):
     @staticmethod
-    def set_browser():
-        CHROME_DRIVER = os.environ.get("CHROME_DRIVER")
-        GECKODRIVER = os.environ.get("GECKODRIVER")
-        if CHROME_DRIVER:
+    def set_browser(browser="chrome"):
+        driver = None
+        if browser == "firefox":
+            from selenium.webdriver.firefox.options import Options
+
+            firefox_options = Options()
+            firefox_options.add_argument("-headless")
+            driver = webdriver.Firefox(firefox_options=firefox_options)
+
+        elif browser == "chrome":
             from selenium.webdriver.chrome.options import Options
 
             chrome_options = Options()
             chrome_options.add_argument("--headless")
             chrome_options.add_argument("--window-size=1920x1080")
-            return webdriver.Chrome(
-                chrome_options=chrome_options, executable_path=CHROME_DRIVER
-            )
-        elif GECKODRIVER:
-            return webdriver.Firefox(executable_path=GECKODRIVER)
-        else:
-            return webdriver.Firefox()
+            driver = webdriver.Chrome(chrome_options=chrome_options)
+
+        elif browser == "safari":
+            driver = webdriver.Safari()
+        return driver
 
     def setUp(self):
         self.browser = self.set_browser()
