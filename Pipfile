@@ -3,6 +3,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[scripts]
+test = "pipenv run ./manage.py test"
+runserver = "pipenv run ./manage.py runserver"
+makemigrations = "pipenv run ./manage.py makemigrations"
+migrate = "pipenv run ./manage.py migrate"
+
 [packages]
 "jinja2" = "*"
 "psycopg2-binary" = "*"
