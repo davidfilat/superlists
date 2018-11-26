@@ -19,7 +19,7 @@ prospector = "*"
 whitenoise = "*"
 
 [dev-packages]
-black = ">=18.9b0"
+black = "*"
 colour-runner = "*"
 coverage = "*"
 flake8 = "*"
@@ -31,7 +31,7 @@ flake8-import-order = "*"
 flake8-logging-format = "*"
 flake8-rst-docstrings = "*"
 isort = "*"
-pyflakes = ">=2.0.0"
+pyflakes = "*"
 pylama = "*"
 pylint = "*"
 pylint-django = "*"
@@ -47,6 +47,7 @@ pyls-isort = "*"
 autopep8 = "*"
 pep8 = "*"
 django-debug-toolbar = "*"
+green = "*"
 
 [pipenv]
 allow_prereleases = true

@@ -1,0 +1,3 @@
+[submodule "lists/static/umbrellajs"]
+	path = lists/static/umbrellajs
+	url = https://davidfilat@github.com/franciscop/umbrella.git

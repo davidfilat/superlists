@@ -35,5 +35,4 @@ def new_list(request):
         list_ = List.objects.create()
         form.save(for_list=list_)
         return redirect(list_)
-    else:
-        return render(request, "home.html", {"form": form})
+    return render(request, "home.html", {"form": form})
