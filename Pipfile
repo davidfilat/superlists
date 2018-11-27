@@ -8,6 +8,7 @@ test = "pipenv run ./manage.py test"
 live = "pipenv run ./manage.py runserver"
 makemigrations = "pipenv run ./manage.py makemigrations"
 migrate = "pipenv run ./manage.py migrate"
+prettify = "prettier --write **/*.html"
 
 [packages]
 "jinja2" = "*"
@@ -47,7 +48,6 @@ pyls-isort = "*"
 autopep8 = "*"
 pep8 = "*"
 django-debug-toolbar = "*"
-green = "*"
 
 [pipenv]
 allow_prereleases = true

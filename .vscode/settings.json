@@ -4,13 +4,14 @@
     "python.unitTest.nosetestsEnabled": false,
     "python.unitTest.unittestEnabled": false,
     "[python]": {
-        "editor.formatOnPaste": false,
+        "editor.formatOnPaste": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": true,
         }
     },
     "emmet.includeLanguages": {
-        "django-html": "html"
+        "django-html": "html",
+        "jinja-hml": "html"
     },
     "files.autoSave": "onFocusChange",
     "pythonTestExplorer.testFramework": "pytest",
@@ -29,6 +30,6 @@
     "vetur.format.defaultFormatter.html": "prettyhtml",
     "html.validate.styles": true,
     "files.associations": {
-        "*.html": "django-html"
+        "*.html": "jinja-html"
     },
 }
