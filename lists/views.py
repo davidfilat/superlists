@@ -13,7 +13,7 @@ def home_page(request):
         Item.objects.create(text=request.POST["text"], list=list_)
         return redirect(f"/lists/{list_.id}/")
 
-    return render(request, "home.html", {"form": ItemForm()})
+    return render(request, "home.j2", {"form": ItemForm()})
 
 
 @require_http_methods(["GET", "POST"])
@@ -25,7 +25,7 @@ def view_list(request, list_id):
         if form.is_valid():
             form.save()
             return redirect(list_)
-    return render(request, "list.html", {"list": list_, "form": form})
+    return render(request, "list.j2", {"list": list_, "form": form})
 
 
 @require_http_methods(["POST"])
@@ -35,4 +35,4 @@ def new_list(request):
         list_ = List.objects.create()
         form.save(for_list=list_)
         return redirect(list_)
-    return render(request, "home.html", {"form": form})
+    return render(request, "home.j2", {"form": form})

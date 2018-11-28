@@ -18,7 +18,7 @@ class HomePageTest(TestCase):
         self.assertTrue(html.startswith("<!DOCTYPE html>"))
         self.assertIn("<title>To-Do lists</title>", html)
         self.assertTrue(html.strip().endswith("</html>"))
-        self.assertTemplateUsed(response, "home.html")
+        self.assertTemplateUsed(response, "home.j2")
 
     def test_can_save_a_POST_request(self):
         self.client.post("/", {"text": "A new list item"})
@@ -45,7 +45,7 @@ class ListViewTest(TestCase):
     def test_uses_list_template(self):
         list_ = List.objects.create()
         response = self.client.get(f"/lists/{list_.id}/")
-        self.assertTemplateUsed(response, "list.html")
+        self.assertTemplateUsed(response, "list.j2")
 
     def test_displays_only_items_for_that_list(self):
         correct_list = List.objects.create()
@@ -80,7 +80,7 @@ class ListViewTest(TestCase):
     def test_for_invalid_input_renders_list_template(self):
         response = self.post_invalid_input()
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "list.html")
+        self.assertTemplateUsed(response, "list.j2")
 
     def test_for_invalid_input_passes_form_to_template(self):
         response = self.post_invalid_input()
@@ -97,7 +97,7 @@ class ListViewTest(TestCase):
 
         expected_error = escape(DUPLICATE_ITEM_ERROR)
         self.assertContains(response, expected_error)
-        self.assertTemplateUsed(response, "list.html")
+        self.assertTemplateUsed(response, "list.j2")
         self.assertEqual(Item.objects.all().count(), 1)
 
 
@@ -116,7 +116,7 @@ class NewListTest(TestCase):
     def test_validation_errors_are_sent_back_to_home_page_template(self):
         response = self.client.post("/lists/new/", data={"text": ""})
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "home.html")
+        self.assertTemplateUsed(response, "home.j2")
         expected_error = escape("You can't have an empty list item.")
         self.assertContains(response, expected_error)
 
@@ -152,14 +152,14 @@ class NewListTest(TestCase):
         list_ = List.objects.create()
         response = self.client.post(f"/lists/{list_.id}/", data={"text": ""})
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "list.html")
+        self.assertTemplateUsed(response, "list.j2")
         expected_error = escape("You can't have an empty list item.")
         self.assertContains(response, expected_error)
 
     def test_for_invalid_input_renders_home_template(self):
         response = self.client.post("/lists/new/", data={"text": ""})
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "home.html")
+        self.assertTemplateUsed(response, "home.j2")
 
     def test_validation_errors_are_shown_on_home_page(self):
         response = self.client.post("/lists/new/", data={"text": ""})
