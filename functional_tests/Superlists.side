@@ -1,0 +1,133 @@
+{
+  "id": "d21680ab-2f1c-43a9-aca2-8c4db651cd43",
+  "version": "1.1",
+  "name": "Superlists",
+  "url": "https://superlists-david.herokuapp.com",
+  "tests": [{
+    "id": "8a895153-680d-4e25-8ab9-cf0334e1978a",
+    "name": "List insertion",
+    "commands": [{
+      "id": "ed72c40e-ca11-49f7-b013-76ced70f4ac8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ab5e128-9665-4e58-bc61-46b47cc51d97",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1680x1027",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "74ea1c8f-88d6-4ca0-b312-137a78eabb99",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_text",
+      "targets": [
+        ["id=id_text", "id"],
+        ["name=text", "name"],
+        ["css=#id_text", "css"],
+        ["css=#id_text", "css:finder"],
+        ["xpath=//input[@id='id_text']", "xpath:attributes"],
+        ["xpath=//div[@id='qunit-fixture']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "david"
+    }, {
+      "id": "1697fc26-44e2-4fe9-bca2-348eb3b20db1",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=id_text",
+      "targets": [
+        ["id=id_text", "id"],
+        ["name=text", "name"],
+        ["css=#id_text", "css"],
+        ["css=#id_text", "css:finder"],
+        ["xpath=//input[@id='id_text']", "xpath:attributes"],
+        ["xpath=//div[@id='qunit-fixture']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "03814099-d735-41a5-8d51-33881da88969",
+      "comment": "",
+      "command": "type",
+      "target": "id=id_text",
+      "targets": [
+        ["id=id_text", "id"],
+        ["name=text", "name"],
+        ["css=#id_text", "css"],
+        ["css=#id_text", "css:finder"],
+        ["xpath=//input[@id='id_text']", "xpath:attributes"],
+        ["xpath=//div[@id='qunit-fixture']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "love"
+    }, {
+      "id": "390d9b04-4d5e-4a8e-8730-dc344c30165a",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=id_text",
+      "targets": [
+        ["id=id_text", "id"],
+        ["name=text", "name"],
+        ["css=#id_text", "css"],
+        ["css=#id_text", "css:finder"],
+        ["xpath=//input[@id='id_text']", "xpath:attributes"],
+        ["xpath=//div[@id='qunit-fixture']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "d71030aa-cff4-4583-a093-b5bb9ebf929a",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=id_text",
+      "targets": [
+        ["id=id_text", "id"],
+        ["name=text", "name"],
+        ["css=#id_text", "css"],
+        ["css=#id_text", "css:finder"],
+        ["xpath=//input[@id='id_text']", "xpath:attributes"],
+        ["xpath=//div[@id='qunit-fixture']/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "91c65f1f-cbf4-4077-8211-5fd2a7d1eae1",
+      "comment": "Assert love is in list",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(2) > td",
+      "targets": [
+        ["css=tr:nth-child(2) > td", "css:finder"],
+        ["xpath=//table[@id='id_list_table']/tbody/tr[2]/td", "xpath:idRelative"],
+        ["xpath=//tr[2]/td", "xpath:position"]
+      ],
+      "value": "2. love"
+    }, {
+      "id": "534f35d6-ffcf-471d-8458-1f7244c284ce",
+      "comment": "Assert duplication error present",
+      "command": "waitForElementPresent",
+      "target": "css=div.text-danger",
+      "targets": [
+        ["css=div.text-danger", "css"],
+        ["css=.text-danger", "css:finder"],
+        ["xpath=//div[@id='qunit-fixture']/form/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": "You've already got this in your list"
+    }]
+  }],
+  "suites": [{
+    "id": "65cdd33c-bee8-4e4d-aee5-8300c7d300ca",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["8a895153-680d-4e25-8ab9-cf0334e1978a"]
+  }],
+  "urls": ["https://superlists-david.herokuapp.com/"],
+  "plugins": []
+}

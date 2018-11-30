@@ -16,11 +16,11 @@
     "files.autoSave": "onFocusChange",
     "pythonTestExplorer.testFramework": "pytest",
     "python.formatting.provider": "black",
-    "python.linting.pylamaEnabled": true,
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylamaEnabled": false,
+    "python.linting.pylintEnabled": false,
     "pydocs.style": "google",
     "python.linting.pydocstyleEnabled": false,
-    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Enabled": false,
     "python.linting.pylintArgs": [
         "--load-plugins pylint_django",
         "--load-plugins pylint_django.checkers.db_performance"
@@ -54,6 +54,6 @@
             "jinja-html",
         ]
     },
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
 
 }
