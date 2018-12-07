@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 import os
 
+from django.core.exceptions import ImproperlyConfigured
+
 import dj_database_url
 
 try:
@@ -21,10 +23,8 @@ except ImportError:
 
     compat.register()
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -34,6 +34,7 @@ if "DJANGO_DEBUG_FALSE" in os.environ:
     DEBUG = False
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
     ALLOWED_HOSTS = [os.environ["SITENAME"], "127.0.0.1"]
+    APPEND_SLASH = True
 else:
     DEBUG = True
     SECRET_KEY = "p9bhkhj=fsj2f=f=#ftdu$ti4*dq^$k0lsz2$2%7y5dr^m0bjk"
@@ -54,8 +55,9 @@ INSTALLED_APPS = [
     "accounts",
 ]
 
-AUTH_USER_MODEL = "accounts.ListUser"
+AUTH_USER_MODEL = "accounts.User"
 AUTHENTICATION_BACKENDS = ["accounts.authentication.PasswordlessAuthenticationBackend"]
+
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -92,10 +94,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "superlists.wsgi.application"
 
-
+DATABASES = {
+    "default": dj_database_url.config(
+        default="postgres://django:07oPXppfgZw7riYUvNMM@localhost:5432/superlists"
+    )
+}
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-DATABASES = {"default": dj_database_url.config()}
+# DATABASES = {"default": DB_URL}
 
 
 # Password validation
@@ -110,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -123,7 +128,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -143,3 +147,4 @@ LOGGING = {
     "loggers": {"django": {"handlers": ["console"]}},
     "root": {"level": "INFO"},
 }
+LOGOUT_REDIRECT_URL = "/"

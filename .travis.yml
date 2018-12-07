@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.6"
+  - "3.7.1"
+  - "pypy3.5"
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database superlists_test;' -U postgres
+env:
+  - DJANGO=2.1.3 DB=postgresql
+branches:
+  only:
+    - master
+install: 
+  - pip install pipenv
+  - pipenv install --dev
+script:
+  - python manage.py test

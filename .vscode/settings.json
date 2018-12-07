@@ -17,7 +17,7 @@
     "pythonTestExplorer.testFramework": "pytest",
     "python.formatting.provider": "black",
     "python.linting.pylamaEnabled": false,
-    "python.linting.pylintEnabled": false,
+    "python.linting.pylintEnabled": true,
     "pydocs.style": "google",
     "python.linting.pydocstyleEnabled": false,
     "python.linting.flake8Enabled": false,
@@ -52,6 +52,7 @@
             "htm",
             "html",
             "jinja-html",
+            "django-html"
         ]
     },
     "workbench.iconTheme": "material-icon-theme",

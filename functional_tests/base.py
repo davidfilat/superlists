@@ -17,7 +17,12 @@ class FunctionalTest(StaticLiveServerTestCase):
 
             firefox_options = Options()
             firefox_options.add_argument("-headless")
-            driver = webdriver.Firefox(firefox_options=firefox_options)
+            try:
+                driver = webdriver.Firefox(firefox_options=firefox_options)
+            except WebDriverException:
+                driver = webdriver.Firefox(
+                    "/usr/local/bin/geckodriver", firefox_options=firefox_options
+                )
 
         elif browser == "chrome":
             from selenium.webdriver.chrome.options import Options
@@ -25,7 +30,12 @@ class FunctionalTest(StaticLiveServerTestCase):
             chrome_options = Options()
             chrome_options.add_argument("--headless")
             chrome_options.add_argument("--window-size=1920x1080")
-            driver = webdriver.Chrome(chrome_options=chrome_options)
+            try:
+                driver = webdriver.Chrome(chrome_options=chrome_options)
+            except WebDriverException:
+                driver = webdriver.Chrome(
+                    "/usr/local/bin/chromedriver", chrome_options=chrome_options
+                )
 
         elif browser == "safari":
             driver = webdriver.Safari()
