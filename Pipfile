@@ -21,6 +21,7 @@ whitenoise = "*"
 psycopg2cffi = "*"
 pytest-mock = "*"
 
+
 [dev-packages]
 black = "*"
 colour-runner = "*"
@@ -52,6 +53,7 @@ pep8 = "*"
 django-debug-toolbar = "*"
 mock = "*"
 pytest-pycharm = "*"
+gmaily = "*"
 
 [pipenv]
 allow_prereleases = true

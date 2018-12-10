@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "02180e09762b8f0d7e66718b8b93fe036559e54eb3a60df398010d2821b07a64"
+            "sha256": "c1cbe6eb30abef780e696568020ab1707b84c7cfef375397a7693ea409b41df9"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -377,10 +377,10 @@
         },
         "six": {
             "hashes": [
-                "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9",
-                "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb"
+                "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c",
+                "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
             ],
-            "version": "==1.11.0"
+            "version": "==1.12.0"
         },
         "snowballstemmer": {
             "hashes": [
@@ -603,6 +603,14 @@
                 "sha256:67045236dcfd6816dc439556d009594abf643e5eb48992e36beac09c2ca659b8"
             ],
             "version": "==0.17.1"
+        },
+        "gmaily": {
+            "hashes": [
+                "sha256:11cd13c4e5e02e35f92d12e0bf29b397c0fa39af74e990ae5df27c43b6c84c8c",
+                "sha256:27cb9ef6eb1a7e3bc32d91ef17eb6089a067ecee279db0420ce502893ba4e5cd"
+            ],
+            "index": "pypi",
+            "version": "==0.0.2"
         },
         "isort": {
             "hashes": [
@@ -869,10 +877,10 @@
         },
         "six": {
             "hashes": [
-                "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9",
-                "sha256:832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb"
+                "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c",
+                "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
             ],
-            "version": "==1.11.0"
+            "version": "==1.12.0"
         },
         "snowballstemmer": {
             "hashes": [
