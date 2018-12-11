@@ -5,7 +5,7 @@ name = "pypi"
 
 [scripts]
 test = "pipenv run ./manage.py test"
-live = "pipenv run ./manage.py runserver"
+server = "pipenv run ./manage.py runserver"
 makemigrations = "pipenv run ./manage.py makemigrations"
 migrate = "pipenv run ./manage.py migrate"
 prettify = "prettier --write **/*.html"
