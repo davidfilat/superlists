@@ -17,6 +17,9 @@
             <div class="container-fluid">
                 <a href="/" class="navbar-brand">Superlists</a>
                 {% if user.email %}
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{% url 'my_lists' user.email %}">My lists</a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-text">Logged in as {{ user.email }}</li>
                     <li><a href="{% url 'logout' %}">Log out</a></li>
@@ -46,18 +49,17 @@
             <div class="col-md-6 offset-md-3 jumbotron">
                 <div class="text-center">
                     <h1>{% block header_text %} {% endblock header_text %}</h1>
+                    {% block list_form %}
                     <form method="POST" action="{% block form_action %} {% endblock form_action %}">
-                        {{ form.text }} {% csrf_token %} {% if form.errors %}
+                        {{ form.text }}
+                        {% csrf_token %}
+                        {% if form.errors %}
                         <div class="text-danger">
                             {{ form.text.errors.as_text | cut:"* " }}
                         </div>
                         {% endif %}
                     </form>
-                    <script src="{% static 'umbrellajs/umbrella.min.js' %}"></script>
-                    <script src="{% static 'js/lists.js' %}"></script>
-                    <script>
-                        window.Superlists.initialize();
-                    </script>
+                    {% endblock %}
                 </div>
             </div>
         </div>
@@ -66,7 +68,18 @@
                 {% block table %} {% endblock table %}
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                {% block extra_content %}
+                {% endblock %}
+            </div>
+        </div>
     </div>
+<script src="{% static 'umbrellajs/umbrella.min.js' %}"></script>
+<script src="{% static 'js/lists.js' %}"></script>
+<script>
+    window.Superlists.initialize();
+</script>
 </body>
 
 </html>
