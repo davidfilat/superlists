@@ -43,6 +43,7 @@ def new_list(request):
     return render(request, "home.j2", {"form": form})
 
 
+@require_http_methods(["GET"])
 def my_lists(request, email):
     owner = User.objects.get(email=email)
     return render(request, "my_lists.j2", {"owner": owner})

@@ -2,15 +2,15 @@
 {% block header_text %} Your To-Do list {% endblock header_text %}
 {% block form_action %} {% url 'view_list' list.id %} {% endblock form_action %}
 {% block table %}
-# if list.item_set.all.count > 0
+{% if list.item_set.all.count > 0 %}
 <table id="id_list_table" class="table">
-    # for item in list.item_set.all #
+    {% for item in list.item_set.all %}
     <tr>
         <td>{{ forloop.counter }}. {{ item.text }}</td>
     </tr>
-    # endfor
-    # else
+    {% endfor %}
+    {% else %}
     <div class="alert alert-warning">There are no items in this list.</div>
 </table>
-# endif
+{% endif %}
 {% endblock table %}
