@@ -95,15 +95,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "superlists.wsgi.application"
 
-DATABASES = {
-    "default": dj_database_url.config(
-        default="postgres://django:07oPXppfgZw7riYUvNMM@localhost:5432/superlists"
-    )
-}
+
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 # DATABASES = {"default": DB_URL}
-
+DATABASES = {"default": dj_database_url.config()}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

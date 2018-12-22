@@ -19,8 +19,6 @@ gunicorn = "*"
 prospector = "*"
 whitenoise = "*"
 psycopg2cffi = "*"
-pytest-mock = "*"
-
 
 [dev-packages]
 black = "*"
@@ -51,9 +49,10 @@ pyls-isort = "*"
 autopep8 = "*"
 pep8 = "*"
 django-debug-toolbar = "*"
-mock = "*"
 pytest-pycharm = "*"
 gmaily = "*"
+pytest-mock = "*"
+mock = "*"
 
 [pipenv]
 allow_prereleases = true

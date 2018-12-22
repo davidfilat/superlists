@@ -9,7 +9,7 @@ User = get_user_model()
 
 # Create your views here.
 @require_http_methods(["GET", "POST"])
-def home_page(request):
+def home_page(request): 
     if request.method == "POST":
         list_ = List.objects.create()
         Item.objects.create(text=request.POST["text"], list=list_)

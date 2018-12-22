@@ -1,19 +1,32 @@
 language: python
+env:
+  - MOZ_HEADLESS=1 DJANGO=2.1.4 DB=postgresql
+addons:
+  firefox: latest
 python:
-  - "3.6"
-  - "3.7.1"
-  - "pypy3.5"
+  - 3.6
+  - 3.7-dev
 services:
   - postgresql
 before_script:
-  - psql -c 'create database superlists_test;' -U postgres
-env:
-  - DJANGO=2.1.3 DB=postgresql
-branches:
-  only:
-    - master
-install: 
+  - psql -c 'create database superlists;' -U postgres
+before_install:
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
+install:
   - pip install pipenv
   - pipenv install --dev
 script:
-  - python manage.py test
+  - pytest
+deploy:
+  provider: heroku
+  app:
+    master: superlists-david
+  on:
+    branch: master
+    python: 3.7-dev
+  api_key:
+    secure: PBLrJjO1gf/MtzKzkRUl4HnWgqVOhJKFMhZ/Lo9Ddbfhz8wTTIYADjWLclMWmj78x+fkOQe8V3Dr5gGmgs7ysbLFLAojR1+Kas0BNR2dqAgNI79S9hKi6QAEI9DlK7jB+H/fl9elNwKe+JntMFXMKb/G6LcfHNtFOxnleleghsqNLu0xtUG6mbOQcIvPJ89TJBp+cSYtAwAs7jyK1TbCKGXJzN6Rarp7uP6R07Bek1/C1dGlQ4TjozY6WFvJvEI4BmwA434kox9cMhKbUTHNwvs4OxpAhhUgNasWE02ml4cfM18DMaucN43GUb5/J2Vqiu9GTElViTXBrdyczIy1EzMsvQUAKRcLJnhURROwbJsD69xRHlBe2VXuz/EP9DGce5gInPrVGtJN5ri4IHWIGqXU8WBLflmTO5PkdbJ7Kk0Fv2qhczy5hNJA3UmfV2+nxaPlIjOrh8q9p7uYIbRfZ/GTvMNoQb7cqDENPs0jB7+UNnX7o2T6Yn6gShYXr3/lg8jpjAomX5bSxFOI/dsJhHQFVHGhoUZjZXGLNwLFMUjYPuKKmR0HP75Cc+6r04rt9sSWtvw2sfY2k05l2UWePvwHEoIh0JsJUlJnQeyJ8QPQWi1bmD37rWnOkaW8YaqdJgfDibobHhJr4AaolYyFlNNIzAGkcXC+BYzG44JwQj0=
+  run: "python manage.py migrate"
