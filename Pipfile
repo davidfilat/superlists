@@ -53,6 +53,7 @@ pytest-pycharm = "*"
 gmaily = "*"
 pytest-mock = "*"
 mock = "*"
+ptvsd = "*"
 
 [pipenv]
 allow_prereleases = true

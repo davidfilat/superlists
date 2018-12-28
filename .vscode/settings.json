@@ -57,6 +57,10 @@
         ]
     },
     "workbench.iconTheme": "material-icon-theme",
-    "css.remoteStyleSheets": ["https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"],
+    "css.remoteStyleSheets": [
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    ],
+    "travis.repository": "superlists",
+    "travis.username": "davidfilat",
 
 }

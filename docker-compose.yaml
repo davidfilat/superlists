@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    env_file: .env
+    environment:
+      POSTGRES_PASSWORD: 07oPXppfgZw7riYUvNMM
+      POSTGRES_USER: django
+      POSTGRES_DB: superlists
+    ports:
+      - "5436:5432"
+  web:
+    build: .
+    command: bash -c "python manage.py migrate && python -m ptvsd --host localhost --port 5678 manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "80:8000"
+      - "3000:3000"
+    depends_on:
+      - db
