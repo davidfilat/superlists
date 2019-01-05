@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/davidfilat/.virtualenvs/superlists-sOAu0_Sh/bin/python",
+    "python.pythonPath": "/Users/davidfilat/.local/share/virtualenvs/superlists-sOAu0_Sh/bin/python",
     "python.unitTest.pyTestEnabled": true,
     "python.unitTest.nosetestsEnabled": false,
     "python.unitTest.unittestEnabled": false,
@@ -62,5 +62,7 @@
     ],
     "travis.repository": "superlists",
     "travis.username": "davidfilat",
+    "python.unitTest.promptToConfigure": false,
+    "python.unitTest.pyTestArgs": ["-n", "auto"],
 
 }
